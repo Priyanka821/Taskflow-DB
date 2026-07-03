@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskFlow DB - Cloud-Powered Task Manager</title>
+  <meta name="description" content="A lightweight, fully responsive cloud-powered task manager built in vanilla JavaScript. Persists state to MongoDB Atlas via Node.js/Express API." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/utilities.css" />
+</head>
+<body>
+
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+    <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <circle cx="12" cy="12" r="4.2"/>
+      <path d="M12 2.5v2.6M12 18.9v2.6M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M2.5 12h2.6M18.9 12h2.6M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/>
+    </svg>
+    <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a7 7 0 1 0 10.5 10.5Z"/>
+    </svg>
+  </button>
+
+  <main class="app" role="main">
+    <header class="app-header">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M4 7h16M4 12h10M4 17h13" stroke-linecap="round"/>
+            <circle cx="20" cy="12" r="1.4" fill="currentColor" stroke="none"/>
+          </svg>
+        </span>
+        <h1>TaskFlow<span class="brand-accent">DB</span></h1>
+      </div>
+      <p class="tagline">Cloud-powered data persistence for task management</p>
+    </header>
+
+    <section class="card">
+
+      <form id="task-form" class="task-form" novalidate>
+        <div class="field">
+          <label for="task-input" class="sr-only">Task description</label>
+          <input
+            type="text"
+            id="task-input"
+            name="task"
+            placeholder="What needs to get done?"
+            maxlength="120"
+            autocomplete="off"
+          />
+          <span id="input-error" class="input-error" role="alert" aria-live="polite"></span>
+        </div>
+        <button type="submit" class="btn-add">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+            <path d="M12 5v14M5 12h14" stroke-linecap="round"/>
+          </svg>
+          <span>Add Task</span>
+        </button>
+      </form>
+
+      <div class="toolbar">
+        <p id="task-counter" class="task-counter">0 of 0 tasks remaining</p>
+        <div class="filters" role="group" aria-label="Filter tasks">
+          <button class="filter-btn is-active" data-filter="all" type="button">All</button>
+          <button class="filter-btn" data-filter="active" type="button">Active</button>
+          <button class="filter-btn" data-filter="completed" type="button">Completed</button>
+        </div>
+      </div>
+
+      <ul id="task-list" class="task-list" aria-live="polite">
+        <!-- Tasks render here via JS -->
+      </ul>
+
+    </section>
+
+    <footer class="app-footer">
+      <p>Storage: <span id="storage-note">connecting to cloud...</span></p>
+    </footer>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="modules/storage.js"></script>
+  <script src="modules/validation.js"></script>
+  <script src="modules/render.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

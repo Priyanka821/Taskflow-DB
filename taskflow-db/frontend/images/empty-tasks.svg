@@ -1,0 +1,10 @@
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="No tasks illustration">
+  <rect x="22" y="14" width="76" height="96" rx="10" fill="currentColor" opacity="0.06"/>
+  <rect x="22" y="14" width="76" height="96" rx="10" stroke="currentColor" stroke-width="2" fill="none" opacity="0.35"/>
+  <line x1="36" y1="34" x2="84" y2="34" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity="0.3"/>
+  <line x1="36" y1="48" x2="74" y2="48" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity="0.3"/>
+  <line x1="36" y1="62" x2="78" y2="62" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity="0.3"/>
+  <circle cx="84" cy="84" r="22" fill="currentColor" opacity="0.09"/>
+  <circle cx="84" cy="84" r="22" stroke="currentColor" stroke-width="2" fill="none" opacity="0.5"/>
+  <path d="M75 84.5 L81 90.5 L93.5 77" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>
