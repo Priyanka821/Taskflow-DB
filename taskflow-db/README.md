@@ -1,4 +1,4 @@
-# TaskFlow DB 🚀
+# TaskFlow DB 
 
 TaskFlow DB is a lightweight, responsive task management solution featuring cloud-powered data persistence.
 
